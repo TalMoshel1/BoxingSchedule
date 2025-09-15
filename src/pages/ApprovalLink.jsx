@@ -6,10 +6,11 @@ import { removeCookie } from "../utils/removeCookie.js";
 import CustonAlert from "../components/CustomAlert.jsx";
 import { ErrorContext } from "../context/ErrorContext.jsx";
 import { AdminContext } from "../context/AdminContext.jsx";
+import ClipLoader from "react-spinners/ClipLoader.js";
 
 const ApprovalLink = () => {
   const { lessonId } = useParams();
-  const [isApproved, setIsApproved] = useState(false);
+  const [approveResult, setApproveResult] = useState(false);
   // const {isVerified} = useContext(AdminContext)
   const [approvedLesson, setApprovedLesson] = useState();
   const { setErrorString } = useContext(ErrorContext);
@@ -17,16 +18,13 @@ const ApprovalLink = () => {
   useEffect(() => {
     const sendPostRequest = async () => {
       try {
-        const response = await fetch(
-          `http/api/lessons/approveLink/${lessonId}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            credentials: "include",
-          }
-        );
+        const response = await fetch(`https://appointment-back-qd2z.onrender.com/api/lessons/approveLink/${lessonId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
 
         if (!response.ok) {
           removeCookie();
@@ -40,10 +38,10 @@ const ApprovalLink = () => {
 
         if (data) {
           setApprovedLesson(data.lesson);
-          return setIsApproved(data);
+          return setApproveResult(data);
         }
       } catch (error) {
-        setIsApproved({ message: "שיעור כבר קבוע במערכת בזמן זה" });
+        setApproveResult({ message: "שיעור כבר קבוע במערכת בזמן זה" });
       }
     };
 
@@ -52,44 +50,52 @@ const ApprovalLink = () => {
     }
   }, [lessonId]);
 
-  if (isApproved) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "1rem",
-          flexGrow: "1",
-        }}
-      >
-        <p>
-          {isApproved.message === "שיעור כבר קבוע במערכת בזמן זה"
-            ? isApproved.message
-            : "השיעור אושר"}
-        </p>
-        {isApproved.message !== "שיעור כבר קבוע במערכת בזמן זה" && (
-          <button
-            style={{
-              width: "max-content",
-              padding: "1rem",
-              borderRadius: "20px",
-              border: "none",
-              backgroundColor: "#F0F0F0",
-              fontSize: "1rem",
-            }}
-            onClick={() =>
-              openWhatsApp(approvedLesson, approvedLesson.studentPhone)
-            }
-          >
-            שלח תזכורת למתאמן
-          </button>
-        )}
-        <CustonAlert />
-      </div>
-    );
-  }
+  // if (isApproved) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "1rem",
+        flexGrow: "1",
+      }}
+    >
+      {approveResult ? (
+        <>
+          <p>
+            {approveResult.message === "שיעור כבר קבוע במערכת בזמן זה"
+              ? approveResult.message
+              : "השיעור אושר"}
+          </p>
+          {approveResult.message !== "שיעור כבר קבוע במערכת בזמן זה" && (
+            <button
+              style={{
+                width: "max-content",
+                padding: "1rem",
+                borderRadius: "20px",
+                border: "none",
+                backgroundColor: "#F0F0F0",
+                fontSize: "1rem",
+              }}
+              onClick={() =>
+                openWhatsApp(approvedLesson, approvedLesson.studentPhone)
+              }
+            >
+              שלח תזכורת למתאמן
+            </button>
+          )}
+          <CustonAlert />
+        </>
+      ) : (
+        <>
+          <ClipLoader />
+        </>
+      )}
+    </div>
+  );
+  // }
 };
 
 export default ApprovalLink;

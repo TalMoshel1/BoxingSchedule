@@ -1,0 +1,75 @@
+.submitPrivateRequest-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center
+}
+
+.arrowLeft-container {
+    width: 100%;
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.private-input {
+    border: none;
+    font-size: 1rem !important;
+    padding-right: 1rem;
+}
+
+.private-label {
+    color: black !important;
+    cursor: pointer;
+    padding-right: 1rem;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0px, -50%);
+}
+
+.private-proportions {
+    height: 100%;
+    max-height: 2.35rem;
+    overflow: hidden;
+    width: 100% !important;
+    position: relative;
+    background-color: rgb(230, 229, 235) !important;
+    border-radius: 20px;
+}
+
+.private-label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.private-lesson-title {
+    text-align: right;
+     color: black !important;
+     margin-block-start: 0rem;
+    margin-block-end: 0.5rem;
+}
+
+.privateForm-container {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.private-main {
+        height: calc(100svh - 10rem);
+
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #F2F1F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (orientation: landscape) and (max-width: 900px) {
+    /* .private-main {
+        height: 100vh;
+    } */
+}

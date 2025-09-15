@@ -36,7 +36,6 @@ const Days = () => {
   const [todayDay, setDayToday] = useState(null);
   const [begginingOfWeek, setBegginingOfWeek] = useState();
 
-
   useEffect(() => {
     if (isToday(currentDate) || !fourWeeksCounter.count) {
       return setFetchApi(true);
@@ -79,8 +78,8 @@ const Days = () => {
   //         newDays
   //     });
 
-  //     return setFetchApi(true);
-  //   } else if (isCurrentSmallerThanNextFetch(currentDate, next4weeks)) {
+  //     return setApi(true);
+  //   } else if (isCurrentSmallerThanNext(currentDate, next4weeks)) {
   //     const newDays = renderDays(new Date(renderedDaysDate), "week");
   //     setDaysState((prev) =>
   //       JSON.stringify(prev) === JSON.stringify(newDays) ? prev : newDays
@@ -93,7 +92,7 @@ const Days = () => {
     const sendPostRequest = async () => {
       setIsDisplay(false);
       try {
-        const response = await fetch("/api/lessons/month", {
+        const response = await fetch("https://appointment-back-qd2z.onrender.com/api/lessons/month", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

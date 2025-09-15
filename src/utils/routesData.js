@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import Calendar from "../pages/Calendar.jsx";
 
 import ApproveLink from "../pages/ApprovalLink.jsx";
-
+import Private2 from "../pages/Private2.jsx";
 import Group2 from "../pages/Group2.jsx";
 
 import SignIn from "../pages/SignIn.jsx";
@@ -34,6 +34,19 @@ export const routes = [
     element: <Navigate to="/calendar" replace />,
     isPrivate: false,
   },
+  {path: 'requestPrivte', name:'reqquestPrivate', element:(
+      <>
+        {injectPageMetaData(
+          "ניהול סטודיו - מערכת שעות",
+          "see private training, group training and cancel training",
+          calendarIcon
+        )}{" "}
+        <FormContainer>
+        <Private2 />
+        </FormContainer>
+      </>
+    ),
+    isPrivate: true },
   {
     path: "/calendar",
     name: "Calendar",
@@ -100,7 +113,7 @@ export const routes = [
           }}
         >
           <h1 style={{ marginBottom: "5rem" }}>
-            שגיאה 403 <br />
+            {/* שגיאה 403 <br /> */}
             אין גישה לעמוד זה
             אנא התחבר מחדש
           </h1>

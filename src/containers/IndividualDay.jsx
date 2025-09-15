@@ -88,6 +88,16 @@ export const IndividualDay = ({ displayedData }) => {
   return (
     <>
       <ListContainer isModalOpen={isModalOpen}>
+        {displayLessons().every((lesson) => lesson.type === "private") &&
+        <>
+              <h1 style={{ color: "grey" }}>
+            אין שיעורים היום
+            <span>
+              {" "}
+              <CelebrationIcon />
+            </span>
+          </h1>
+        </>}
         {displayLessons().length > 0 ? (
           displayLessons().map((l, index) => {
             if (l.isApproved && l.type !== "group" && isVerified) {
@@ -224,13 +234,7 @@ export const IndividualDay = ({ displayedData }) => {
             }
           })
         ) : (
-          <h1 style={{ color: "grey" }}>
-            אין שיעורים היום
-            <span>
-              {" "}
-              <CelebrationIcon />
-            </span>
-          </h1>
+          <></>
         )}
       </ListContainer>
 

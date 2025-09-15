@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 export const AuthorizationProvider = ({ children }) => {
   const signIn = async () => {
     try {
-      const response = await fetch("/api/auth/signin", {
+      const response = await fetch("https://appointment-back-qd2z.onrender.com/api/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

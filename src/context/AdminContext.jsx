@@ -7,7 +7,7 @@ export const AdminProvider = ({ children }) => {
 
   const verify = async () => {
     try {
-      const response = await fetch("/api/auth/verify-token-admin", {
+      const response = await fetch("https://appointment-back-qd2z.onrender.com/api/auth/verify-token-admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,9 +29,9 @@ export const AdminProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    verify();
-  }, []);
+  // useEffect(() => {
+  //   verify();
+  // }, []);
 
   return (
     <AdminContext.Provider value={{ isVerified, verify, setIsVerified }}>

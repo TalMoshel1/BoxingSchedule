@@ -39,7 +39,7 @@ export const Content = styled.div`
   // height: 73svh;
   overflow-x: none;
   overflow-y: scroll;
-  gap: 1rem;
+  gap: 0.5rem;
   direction: rtl;
   overflow: scroll;
   scrollbar-width: none;

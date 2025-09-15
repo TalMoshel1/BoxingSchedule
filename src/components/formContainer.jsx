@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Container = styled.main`
 
   height: calc(100svh - 10rem);
-  overflow: scroll;
+  // overflow: scroll;
   background-color: rgb(242, 241, 246);
   display: flex;
   position:relative;

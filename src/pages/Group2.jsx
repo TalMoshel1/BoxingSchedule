@@ -140,7 +140,7 @@ const Group2 = () => {
 
     try {
       setDisplayPage(false);
-      const response = await fetch("/api/lessons/group", {
+      const response = await fetch("https://appointment-back-qd2z.onrender.com/api/lessons/group", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
