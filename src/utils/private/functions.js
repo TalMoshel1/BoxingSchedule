@@ -8,8 +8,8 @@ const getDayLessons = async (day, setLoading, setThisDayLessons) => {
   try {
     setLoading(true);
     const response = await fetch(
-      // "https://http://appointment-back-qd2z.onrender.com/api/lessons/day",
-            "http://appointment-back-qd2z.onrender.com/api/lessons/day",
+      // "https://https://appointment-back-qd2z.onrender.com/api/lessons/day",
+      "https://appointment-back-qd2z.onrender.com/api/lessons/day",
 
       {
         method: "POST",
@@ -21,11 +21,12 @@ const getDayLessons = async (day, setLoading, setThisDayLessons) => {
         }),
       }
     );
-    console.log('response: ', response)
+    console.log("response: ", response);
     if (!response.ok) {
       setLoading(false);
-      console.log(        `HTTP error! Status: ${response.status} ${response.statusText}`
-)
+      console.log(
+        `HTTP error! Status: ${response.status} ${response.statusText}`
+      );
       throw new Error(
         `HTTP error! Status: ${response.status} ${response.statusText}`
       );
