@@ -22,8 +22,8 @@ const SubmitPrivateRequest = ({ step, previous, body }) => {
 
       data.day = day;
       const response = await fetch(
-        // "https://http://appointment-back-qd2z.onrender.com/api/lessons/requestPrivateLesson",
-        "http://localhost:3002/api/lessons/requestPrivateLesson",
+        "https://http://appointment-back-qd2z.onrender.com/api/lessons/requestPrivateLesson",
+        // "http://localhost:3002/api/lessons/requestPrivateLesson",
 
         {
           method: "POST",
