@@ -18,13 +18,16 @@ const ApprovalLink = () => {
   useEffect(() => {
     const sendPostRequest = async () => {
       try {
-        const response = await fetch(`https://appointment-back-qd2z.onrender.com/api/lessons/approveLink/${lessonId}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        });
+        const response = await fetch(
+          `http://appointment-back-qd2z.onrender.com/api/lessons/approveLink/${lessonId}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          }
+        );
 
         if (!response.ok) {
           removeCookie();

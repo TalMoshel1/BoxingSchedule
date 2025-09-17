@@ -92,15 +92,18 @@ const Days = () => {
     const sendPostRequest = async () => {
       setIsDisplay(false);
       try {
-        const response = await fetch("https://appointment-back-qd2z.onrender.com/api/lessons/month", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            start: new Date(currentDate),
-          }),
-        });
+        const response = await fetch(
+          "http://appointment-back-qd2z.onrender.com/api/lessons/month",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              start: new Date(currentDate),
+            }),
+          }
+        );
 
         if (!response.ok) {
           setIsDisplay(true);

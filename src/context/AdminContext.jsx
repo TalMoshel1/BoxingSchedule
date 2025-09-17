@@ -7,13 +7,16 @@ export const AdminProvider = ({ children }) => {
 
   const verify = async () => {
     try {
-      const response = await fetch("https://appointment-back-qd2z.onrender.com/api/auth/verify-token-admin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        "http://appointment-back-qd2z.onrender.com/api/auth/verify-token-admin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
       if (!response.ok) {
         setIsVerified(false);
       }

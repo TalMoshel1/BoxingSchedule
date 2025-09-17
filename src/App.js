@@ -22,6 +22,8 @@ function App() {
     toggleMenu(!isMenuOpen);
   };
 
+  console.log("theme in app.js: ", theme);
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>

@@ -21,7 +21,7 @@ const Days = () => {
     const sendPostRequest = async () => {
       setIsDisplay(false);
       try {
-        const response = await fetch("https://appointment-back-qd2z.onrender.com/api/lessons/week", {
+        const response = await fetch("http://appointment-back-qd2z.onrender.com/api/lessons/week", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

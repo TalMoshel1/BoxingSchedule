@@ -35,14 +35,17 @@ const DeleteLesson = ({
 
   const deleteLesson = async (lessonId) => {
     try {
-      const response = await fetch(`https://appointment-back-qd2z.onrender.com/api/lessons/${lessonId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ deleteAll: isDeleteAll }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        `http://appointment-back-qd2z.onrender.com/api/lessons/${lessonId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ deleteAll: isDeleteAll }),
+          credentials: "include",
+        }
+      );
       if (!response.ok) {
         removeCookie("token");
         setErrorString("שגיאה באימות!");

@@ -1,9 +1,9 @@
 {
   "lighthouseVersion": "12.6.0",
-  "requestedUrl": "https://appointment-back-qd2z.onrender.com/calendar",
-  "mainDocumentUrl": "https://appointment-back-qd2z.onrender.com/calendar",
-  "finalDisplayedUrl": "https://appointment-back-qd2z.onrender.com/calendar",
-  "finalUrl": "https://appointment-back-qd2z.onrender.com/calendar",
+  "requestedUrl": "http://localhost:3002/calendar",
+  "mainDocumentUrl": "http://localhost:3002/calendar",
+  "finalDisplayedUrl": "http://localhost:3002/calendar",
+  "finalUrl": "http://localhost:3002/calendar",
   "fetchTime": "2025-05-16T11:23:20.347Z",
   "gatherMode": "navigation",
   "runWarnings": [],
@@ -59,7 +59,7 @@
         ],
         "items": [
           {
-            "url": "https://appointment-back-qd2z.onrender.com/static/js/main.b50d6821.js",
+            "url": "http://localhost:3002/static/js/main.b50d6821.js",
             "totalBytes": 248636,
             "wastedBytes": 146130,
             "wastedPercent": 58.77249547737643,
@@ -97,9 +97,7 @@
         ],
         "overallSavingsMs": 750,
         "overallSavingsBytes": 146130,
-        "sortedBy": [
-          "wastedBytes"
-        ],
+        "sortedBy": ["wastedBytes"],
         "debugData": {
           "type": "debugdata",
           "metricSavings": {
@@ -112,9 +110,7 @@
     }
   },
   "configSettings": {
-    "output": [
-      "json"
-    ],
+    "output": ["json"],
     "maxWaitForFcp": 30000,
     "maxWaitForLoad": 45000,
     "pauseAfterFcpMs": 1000,
@@ -160,20 +156,14 @@
     "additionalTraceCategories": null,
     "extraHeaders": null,
     "precomputedLanternData": null,
-    "onlyAudits": [
-      "unused-javascript"
-    ],
+    "onlyAudits": ["unused-javascript"],
     "onlyCategories": null,
     "skipAudits": null
   },
   "categories": {
     "performance": {
       "title": "Performance",
-      "supportedModes": [
-        "navigation",
-        "timespan",
-        "snapshot"
-      ],
+      "supportedModes": ["navigation", "timespan", "snapshot"],
       "auditRefs": [
         {
           "id": "unused-javascript",
@@ -261,9 +251,7 @@
   "entities": [
     {
       "name": "onrender.com",
-      "origins": [
-        "https://appointment-back-qd2z.onrender.com"
-      ],
+      "origins": ["http://localhost:3002"],
       "isFirstParty": true,
       "isUnrecognized": true
     }
