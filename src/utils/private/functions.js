@@ -8,8 +8,8 @@ const getDayLessons = async (day, setLoading, setThisDayLessons) => {
   try {
     setLoading(true);
     const response = await fetch(
-      // "https://http://appointment-back-qd2z.onrender.com/api/lessons/day",
-            "http://localhost:3002/api/lessons/day",
+      "https://http://appointment-back-qd2z.onrender.com/api/lessons/day",
+            // "http://localhost:3002/api/lessons/day",
 
       {
         method: "POST",
