@@ -24,6 +24,8 @@ const getDayLessons = async (day, setLoading, setThisDayLessons) => {
 
     if (!response.ok) {
       setLoading(false);
+      console.log(        `HTTP error! Status: ${response.status} ${response.statusText}`
+)
       throw new Error(
         `HTTP error! Status: ${response.status} ${response.statusText}`
       );
