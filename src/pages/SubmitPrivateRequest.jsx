@@ -24,7 +24,6 @@ const SubmitPrivateRequest = ({ step, previous, body }) => {
       const response = await fetch(
         "https://http://appointment-back-qd2z.onrender.com/api/lessons/requestPrivateLesson",
         // "http://localhost:3002/api/lessons/requestPrivateLesson",
-
         {
           method: "POST",
           headers: {
