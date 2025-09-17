@@ -95,7 +95,7 @@ const Days = () => {
       setIsDisplay(false);
       try {
         const response = await fetch(
-          "http://appointment-back-qd2z.onrender.com/api/lessons/month",
+          "https://appointment-back-qd2z.onrender.com/api/lessons/month",
           {
             method: "POST",
             headers: {

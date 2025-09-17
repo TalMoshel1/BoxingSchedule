@@ -14,7 +14,7 @@ export function openWhatsApp(lesson, phone, to) {
     בשעות: ${lesson.endTime} - ${lesson.startTime}
 
     לאישור האימון לחץ:
-    http://appointment-back-qd2z.onrender.com/approveLink/${lesson._id}
+    https://appointment-back-qd2z.onrender.com/approveLink/${lesson._id}
     `;
   } else {
     message = `

@@ -5,17 +5,20 @@ export const AuthContext = createContext();
 export const AuthorizationProvider = ({ children }) => {
   const signIn = async () => {
     try {
-      const response = await fetch("http://appointment-back-qd2z.onrender.com/api/auth/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: "demouser4@gmail.com",
-          password: "987687765",
-        }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://appointment-back-qd2z.onrender.com/api/auth/signin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: "demouser4@gmail.com",
+            password: "987687765",
+          }),
+          credentials: "include",
+        }
+      );
       if (!response.ok) {
         throw new Error(
           `http error! Status: ${response.status} ${response.statusText}`

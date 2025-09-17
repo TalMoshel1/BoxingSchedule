@@ -140,19 +140,22 @@ const Group2 = () => {
 
     try {
       setDisplayPage(false);
-      const response = await fetch("http://appointment-back-qd2z.onrender.com/api/lessons/group", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
+      const response = await fetch(
+        "https://appointment-back-qd2z.onrender.com/api/lessons/group",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
 
-        body: JSON.stringify({
-          ...formDataToSend,
-          repeatEndDate: repeatEnd,
-          day: day,
-        }),
-      });
+          body: JSON.stringify({
+            ...formDataToSend,
+            repeatEndDate: repeatEnd,
+            day: day,
+          }),
+        }
+      );
       const data = await response.json();
       if (
         data.message === "Token is missing" ||
